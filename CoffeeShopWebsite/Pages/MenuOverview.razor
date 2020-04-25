@@ -1,0 +1,40 @@
+﻿@page "/menu"
+@inherits MenuOverviewBase
+
+
+<h1>Menu</h1>
+@* while async initialize is running, show loading.. *@
+@if (MenuItems == null)
+{
+    <p><em>Wait for the list of hot and cold coffees...</em></p>
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th></th>
+            <th>ID</th>
+            <th>Item</th>
+            <th>Description</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in MenuItems)
+        {
+            <tr>
+                <td><img src="http://lorempixel.com/50/50/food" class="rounded-circle" /></td>
+                <td>@item.ItemId</td>
+                <td>@item.ItemName</td>
+                <td>@item.Description</td>
+                <td>@item.PriceValue</td>
+                <td>
+                    <a href="@($"detail/{item.ItemId}")" class="btn btn-primary">
+                        <i class="fas fa-info-circle"></i>
+                    </a>
+                </td>
+            </tr>
+        }
+
+    </tbody>
+
+</table>

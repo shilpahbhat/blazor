@@ -1,0 +1,25 @@
+﻿@page "/detail/{ItemId}"
+@inherits MenuItemDetailBase
+
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-2 col-sm-4">
+                <img src="http://lorempixel.com/100/100/food" class="rounded-circle" />
+            </div>
+            <div class="col-md-8 col-sm-4">
+                <label typeof="text"><strong>@($"{MenuItem.ItemName}  { Environment.NewLine}   {MenuItem.Description}")</strong></label>
+            </div>
+            <div class="col-md-2 col-sm-4">
+                <label typeof="text">@MenuItem.PriceValue</label>
+            </div>
+        </div>
+        @*<div class="row align-items-center">
+            <div class="col-md-4 col-sm-6">
+                <label typeof="text">@MenuItem.PriceValue</label>
+            </div>
+            <div class="col-md-8 col-sm-6">
+                <label typeof="text">@MenuItem.Description</label>
+            </div>
+        </div>*@
+    
+    </div> 
